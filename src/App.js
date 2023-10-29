@@ -1,10 +1,10 @@
 import React from "react";
-import ExpenseItem from "./components/ExpenseItem";
+import ExpenseItems from "./components/ExpenseItems";
 
 function App() {
   return (
     <>
-      <ExpenseItem />
+      <ExpenseItems/>
     </>
   )
 };

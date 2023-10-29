@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ExpenseItem = () => {
+const ExpenseItems = () => {
     return (
         <div>
             <ul>Expense Items</ul>
@@ -11,4 +11,4 @@ const ExpenseItem = () => {
     )
 }
 
-export default ExpenseItem;
+export default ExpenseItems;
