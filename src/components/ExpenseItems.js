@@ -2,11 +2,17 @@ import React from 'react'
 import './ExpenseItems.css'
 
 const ExpenseItems = ({expense}) => {
-    const formattedDate = expense.date.toLocaleDateString();
+    const month = expense.date.toLocaleDateString('en-US',{month:'long'});
+    const day = expense.date.toLocaleDateString('en-US',{day:'2-digit'});
+    const year = expense.date.getFullYear();
 
     return (
         <div className='expense-item'>
-            <div>{formattedDate}</div>
+            <div>
+                <div>{month}</div>
+                <div>{day}</div>
+                <div>{year}</div>
+            </div>
             <div>{expense.location}</div>
             <div className='expense-item_description'>
                 <h2>{expense.title}</h2>
