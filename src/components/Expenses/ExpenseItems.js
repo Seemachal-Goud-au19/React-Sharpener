@@ -1,18 +1,12 @@
 import React from 'react'
+import ExpenseDate from './ExpenseDate';
 import './ExpenseItems.css'
 
 const ExpenseItems = ({expense}) => {
-    const month = expense.date.toLocaleDateString('en-US',{month:'long'});
-    const day = expense.date.toLocaleDateString('en-US',{day:'2-digit'});
-    const year = expense.date.getFullYear();
-
+    
     return (
         <div className='expense-item'>
-            <div>
-                <div>{month}</div>
-                <div>{day}</div>
-                <div>{year}</div>
-            </div>
+           <ExpenseDate date={expense.date}/>
             <div>{expense.location}</div>
             <div className='expense-item_description'>
                 <h2>{expense.title}</h2>
