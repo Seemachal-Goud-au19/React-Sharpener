@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import ExpenseDate from './ExpenseDate';
-import './ExpenseItems.css'
+import './ExpenseItem.css'
 
-const ExpenseItems = ({ expense, handleDeleteExpenseItems }) => {
+const ExpenseItem = ({ expense, handleDeleteExpenseItems }) => {
     const [title, setTitle] = useState(expense.title);
     const [amount, setAmount] = useState(expense.amount);
     const handleChangeTitle = () => {
@@ -28,4 +28,4 @@ const ExpenseItems = ({ expense, handleDeleteExpenseItems }) => {
     )
 }
 
-export default ExpenseItems;
+export default ExpenseItem;
