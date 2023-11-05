@@ -3,26 +3,35 @@ import ExpenseDate from './ExpenseDate';
 import './ExpenseItem.css'
 
 const ExpenseItem = ({ expense, handleDeleteExpenseItems }) => {
-    const [title, setTitle] = useState(expense.title);
-    const [amount, setAmount] = useState(expense.amount);
+    const [ enteredtitle, setEnteredtitle] = useState(expense.title);
+    const [enteredAmount, setEnteredAmount] = useState(expense.amount);
+    const [ enteredDate,  setEnteredDate] = useState(expense.date);
+
     const handleChangeTitle = () => {
-        setTitle('Update')
-        
+        const newTitle = prompt('enter Title')
+        setEnteredtitle(newTitle)
+    }
+    const handleChangeAmount = ()=>{
+        const newAmount = prompt('enter Amount')
+        setEnteredAmount(newAmount)
     }
 
-    const handleChangeAmount =()=>{
-        setAmount(100+'$')
+    const handleChangeDate = ()=>{
+        const newDate = prompt('enter date')
+        setEnteredDate(newDate)
     }
+
     return (
         <div className='expense-item'>
-            <ExpenseDate date={expense.date} />
+            <ExpenseDate date={enteredDate} />
             <div>{expense.location}</div>
             <div className='expense-item_description'>
-                <h2>{title}</h2>
-                <div className='expense-item_price'>{amount}</div>
+                <h2>{enteredtitle}</h2>
+                <div className='expense-item_price'>{enteredAmount}</div>
             </div>
             <div onClick={handleChangeAmount} style={{ cursor: 'pointer' }}>Change Amount</div>
-            <div onClick={handleChangeTitle} style={{ cursor: 'pointer' }}>Change title</div>
+            <div onClick={handleChangeTitle} style={{ cursor: 'pointer' }}>Change Title</div>
+            <div onClick={handleChangeDate} style={{ cursor: 'pointer' }}>Change Date</div>
             <div onClick={() => handleDeleteExpenseItems(expense.id)} style={{ cursor: 'pointer' }}>Delete</div>
         </div>
     )

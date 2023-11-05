@@ -1,20 +1,22 @@
 import React, { useState } from 'react'
 import './ExpenseForm.css'
-const ExpenseForm = ({setExpenseList}) => {
- 
+const ExpenseForm = ({ setExpenseList }) => {
+
     const [formData, setFormData] = useState({
         title: '',
         amount: '',
-        date: ''
+        date: '',
+        
     })
 
-    
+
     const handleInputChange = (type, value) => {
         console.log('type', type, 'value', value)
-      
+
         setFormData((prevData) => ({
             ...prevData,
-            [type]: value
+            [type]: value,
+            
         }
         )
         )
@@ -22,14 +24,14 @@ const ExpenseForm = ({setExpenseList}) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        let keyCount=0;
-      
-        setExpenseList((prevData)=>{
-         const expenseData = [...prevData,{...formData, id:keyCount++}]
-         return expenseData;
+        let keyCount = Date.now().toString(36);
+
+        setExpenseList((prevData) => {
+            const expenseData = [...prevData, { ...formData, id: keyCount }]
+            return expenseData;
         })
-      
-        }
+
+    }
     return (
         <div className='expense-form'>
             <h5>ExpenseForm</h5>
