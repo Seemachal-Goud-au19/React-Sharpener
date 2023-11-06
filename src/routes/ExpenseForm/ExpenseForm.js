@@ -30,6 +30,11 @@ const ExpenseForm = ({ setExpenseList }) => {
             const expenseData = [...prevData, { ...formData, id: keyCount }]
             return expenseData;
         })
+        setFormData({
+            title: '',
+            amount: '',
+            date: '',
+        })
 
     }
     return (
