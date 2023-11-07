@@ -24,10 +24,9 @@ const ExpenseForm = ({ setExpenseList }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        let keyCount = Date.now().toString(36);
-
-        setExpenseList((prevData) => {
-            const expenseData = [...prevData, { ...formData, id: keyCount }]
+       
+    setExpenseList((prevData) => {
+            const expenseData = [...prevData, { ...formData, id: Date.now().toString(36) }]
             return expenseData;
         })
         setFormData({
