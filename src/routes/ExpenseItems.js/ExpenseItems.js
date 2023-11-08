@@ -8,6 +8,9 @@ const ExpenseItems = ({ expenseList, setExpenseList }) => {
   const handleDeleteExpenseItems = (id) => {
     setExpenseList(expenseList.filter((item) => item.id !== id))
   }
+
+  let expenseContent = <p>Only single Expense here. Please add more..</p>
+    
   return (
     <>
     <Filter expenseList={expenseList} setExpenseList={setExpenseList}/>
@@ -15,6 +18,7 @@ const ExpenseItems = ({ expenseList, setExpenseList }) => {
         handleDeleteExpenseItems={handleDeleteExpenseItems} />)
 
       }
+      {expenseList.length ===1 && expenseContent}
     </>
   )
 }
