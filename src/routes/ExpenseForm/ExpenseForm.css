@@ -1,42 +1,67 @@
-.expense-form {
-    max-width: 400px;
-    margin: 0 auto;
-  }
-  
-  .expense-form form {
-    display: flex;
-    flex-direction: column;
-  }
+/* ExpenseForm.css */
 
-  .expense-form h5{
-    margin-left: 100px;
-  }
-  
-  .expense-form label {
-    margin-bottom: 5px;
-  }
-  
-  .expense-form input {
-    padding: 5px;
-    margin-bottom: 10px;
-  }
-  
-  .expense-form input[type="submit"] {
-    background-color: #4caf50;
-    color: white;
-    padding: 10px 15px;
-    width:100px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .expense-form input[type="submit"]:hover {
-    background-color: #45a049;
-  }
-  
-  .expense-form input[type="date"] {
-    padding: 5px;
-    margin-bottom: 10px;
-  }
-  
+.expense-form {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.expense-form h5 {
+  text-align: center;
+  color: #333;
+}
+
+.expense-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.expense-form div {
+  margin-bottom: 15px;
+}
+
+.expense-form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.expense-form input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.expense-form button {
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.expense-form button[type="submit"] {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.expense-form button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.expense-form button[type="button"] {
+  margin-right: 10px;
+  background-color: #ff0000;
+  color: #fff;
+}
+
+.expense-form button[type="button"]:hover {
+  background-color: #cc0000;
+}

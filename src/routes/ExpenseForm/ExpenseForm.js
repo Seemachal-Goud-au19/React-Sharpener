@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './ExpenseForm.css'
-const ExpenseForm = ({ setExpenseList }) => {
+const ExpenseForm = ({ setExpenseList, setOpenExpense }) => {
 
     const [formData, setFormData] = useState({
         title: '',
@@ -35,6 +35,8 @@ const ExpenseForm = ({ setExpenseList }) => {
             date: '',
         })
 
+        setOpenExpense(false)
+
     }
     return (
         <div className='expense-form'>
@@ -54,7 +56,8 @@ const ExpenseForm = ({ setExpenseList }) => {
                     <label>Date</label>
                     <input type='date' value={formData.date} onChange={(e) => { handleInputChange('date', e.target.value) }} />
                 </div>
-                <input type='submit' />
+                <button onClick={()=>setOpenExpense(false)}>Cancel</button>
+                <button type='submit'> Add Expense</button>
             </form>
         </div>
     )
